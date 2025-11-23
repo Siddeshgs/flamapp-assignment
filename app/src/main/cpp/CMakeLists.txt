@@ -24,14 +24,23 @@ project("flamapp_ai_assignment")
 # System.loadLibrary() and pass the name of the library defined here;
 # for GameActivity/NativeActivity derived applications, the same library name must be
 # used in the AndroidManifest.xml file.
-add_library(${CMAKE_PROJECT_NAME} SHARED
-        # List C/C++ source files with relative paths to this CMakeLists.txt.
-        native-lib.cpp)
+set(OpenCV_DIR ${CMAKE_SOURCE_DIR}/OpenCV/sdk/native/jni)
+find_package(OpenCV REQUIRED)
 
-# Specifies libraries CMake should link to your target library. You
-# can link libraries from various origins, such as libraries defined in this
-# build script, prebuilt third-party libraries, or Android system libraries.
-target_link_libraries(${CMAKE_PROJECT_NAME}
-        # List libraries link to the target library
+# Define native library
+add_library(
+        native-lib
+        SHARED
+        native-lib.cpp
+)
+
+# Include OpenCV
+include_directories(${OpenCV_INCLUDE_DIRS})
+
+# Link OpenCV + Android libs
+target_link_libraries(
+        native-lib
+        ${OpenCV_LIBS}
+        log
         android
-        log)
+)
