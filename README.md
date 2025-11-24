@@ -1,5 +1,5 @@
 # Flamapp.AI Assignment
-Android + Native (C++) + OpenCV + Kotlin + Web (Optional)
+Android + Native (C++) + OpenCV + Kotlin 
 
 This repository contains my complete solution for the Flamapp.AI internship assignment.  
 The project includes:
@@ -8,7 +8,6 @@ The project includes:
 - NDK + JNI integration
 - OpenCV Android SDK (native)
 - C++ Image processing demo
-- Optional TypeScript web module
 - Proper structured commit history
 
 ---
@@ -31,9 +30,6 @@ The project includes:
 - Linked through CMake
 - Verified using `cv::Mat::zeros()`
 
-### ✅ Web (Optional)
-- Node.js / TypeScript backend for frame-flow
-- Basic server stub provided
 
 ---
 
